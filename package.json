@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Playwright end to end tests",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "demo_firefox":"npx playwright test tests/demo/mytest.spec.ts --project=\"firefox\" --headed",
+    "demo_chrome": "npx playwright test tests/demo/mytest.spec.ts --project=\"chromium\" --headed",
+    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
+    "login":"npx playwright test tests/functional/Appointment.spec.ts --headed"
+  },
   "keywords": [],
   "author": "Nipander",
   "license": "ISC",

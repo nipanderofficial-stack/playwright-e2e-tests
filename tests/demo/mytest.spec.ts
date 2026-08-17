@@ -9,5 +9,5 @@ test("Validate the page load with correct title", async ({page}) => {
     await expect(page).toHaveTitle("CURA Healthcare Service");
 
     // 3 Assert header Text
-    await expect(page.locator("//h1")).toHaveText("CURA Healthcare Service");
+    await expect(page.locator("h1")).toHaveText("CURA Healthcare Service");
 });
