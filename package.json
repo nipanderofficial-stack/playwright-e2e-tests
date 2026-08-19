@@ -4,10 +4,13 @@
   "description": "Playwright end to end tests",
   "main": "index.js",
   "scripts": {
-    "demo_firefox":"npx playwright test tests/demo/mytest.spec.ts --project=\"firefox\" --headed",
+    "debug-cli": "PWDEBUG=1 npx playwright test tests/demo/login.spec.ts",
+    "debug-ui": "npx playwright test tests/demo/login.spec.ts --ui --headed",
+    "login-cura": "npx playwright test tests/demo/login.spec.ts --headed",
+    "demo_firefox": "npx playwright test tests/demo/mytest.spec.ts --project=\"firefox\" --headed",
     "demo_chrome": "npx playwright test tests/demo/mytest.spec.ts --project=\"chromium\" --headed",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
-    "login":"npx playwright test tests/functional/Appointment.spec.ts --headed"
+    "login": "npx playwright test tests/functional/Appointment.spec.ts --headed"
   },
   "keywords": [],
   "author": "Nipander",
@@ -15,6 +18,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.0"
+    "@types/node": "^26.1.0",
+    "allure-playwright": "^3.10.2",
+    "cross": "^1.0.0"
   }
 }
