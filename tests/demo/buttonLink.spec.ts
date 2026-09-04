@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test';
+import { log } from '../helpers/logger';
 
 test('Appointment test', async({page}) => {
 
@@ -29,4 +30,17 @@ test('Appointment test', async({page}) => {
     await page.getByRole('link',{'name' : 'Make Appointment'}).click({timeout : 30_000});
 
 
+});
+
+test.only("Click on Make Appointment", async({page}) => {
+    await page.goto('https://katalon-demo-cura.herokuapp.com/');
+    let element = page.getByRole('link',{'name' : 'Make-Appointment'});
+
+    try{
+                await expect(element).toBeVisible({timeout:10_000});  //custom Timeout: Default timeout: 5 secs
+                await element.click();
+        } catch(error){
+                await log("error",`Failed to click element: ${element}, error: ${error}`);
+                throw error;
+        }
 });

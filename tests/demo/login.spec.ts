@@ -10,7 +10,7 @@ test.describe("Test Login", () => {
     await page.getByRole("link", { name: "Make Appointment" }).click();
 
   })
-  test.only("test1", async ({ page }) => {
+  test("test1", async ({ page }) => {
   
     await page.getByLabel("Username").fill("John Doe");
     await page.getByLabel("Password").fill("ThisIsNotAPassword");
@@ -21,7 +21,7 @@ test.describe("Test Login", () => {
     await page
       .getByLabel("Facility")
       .selectOption("Hongkong CURA Healthcare Center");
-    await page.getByRole("radio", { name: "Medicare" }).check();
+    await page.getByRole("radio", { name: "Medicare" }). check();
     await page.getByRole("textbox", { name: "Visit Date (Required)" }).click();
     //await page.getByRole("cell", { name: "17" }).click();
     await page

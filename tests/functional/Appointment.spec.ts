@@ -18,9 +18,7 @@ test.describe("Test Login", () => {
 
     //Enter the details on Appointment page
     await expect(page.locator("//h2")).toHaveText("Make Appointment");
-    await page
-      .getByLabel("Facility")
-      .selectOption("Hongkong CURA Healthcare Center");
+    await page.getByLabel("Facility").selectOption("Hongkong CURA Healthcare Center");
     await page.getByRole("radio", { name: "Medicare" }).check();
     await page.getByRole("textbox", { name: "Visit Date (Required)" }).click();
     await page.getByRole("cell", { name: "17" }).click();
